@@ -115,6 +115,7 @@ end
 ---@param s string
 ---@return table
 M.find_highlight = function(s)
+  local util = require "obsidian.util"
   local matches = {}
   for match in iter(M.find_matches(s, { "Highlight" })) do
     -- Remove highlights will begin/end with whitespace

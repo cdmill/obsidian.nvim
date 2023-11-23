@@ -120,7 +120,7 @@ M.find_highlight = function(s)
   for match in iter(M.find_matches(s, { "Highlight" })) do
     -- Remove highlights will begin/end with whitespace
     local match_start, match_end, _ = unpack(match)
-    local text = string.sub(match_start + 1, match_end - 1)
+    local text = string.sub(match_start + 2, match_end - 2)
     if util.strip_whitespace(text) == text then
       matches[#matches + 1] = match
     end

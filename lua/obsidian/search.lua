@@ -118,9 +118,9 @@ M.find_highlight = function(s)
   local util = require "obsidian.util"
   local matches = {}
   for match in iter(M.find_matches(s, { "Highlight" })) do
-    -- Remove highlights will begin/end with whitespace
+    -- Remove highlights that begin/end with whitespace
     local match_start, match_end, _ = unpack(match)
-    local text = string.sub(match_start + 2, match_end - 2)
+    local text = string.sub(s, match_start + 2, match_end - 2)
     if util.strip_whitespace(text) == text then
       matches[#matches + 1] = match
     end
